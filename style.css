@@ -62,13 +62,31 @@ table {
           box-sizing: border-box;
 }
 
-.container {
+.container,
+.grid {
   margin: 0 auto;
-  padding-left: 30px;
-  padding-right: 30px;
   width: 960px;
 }
 
+.container {
+  padding: 25px 30px;
+}
+
+.col-1-4,
+.col-1-2 {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.col-1-4 {
+	width: 25%;
+}
+
+.col-1-2 {
+	width: 50%;
+}
 /*
   ========================================
   Clearfix
@@ -94,10 +112,43 @@ table {
   ========================================
 */
 
-h1, h3, h4, h5, p {
+h1, h3, h4, h5 {
   margin-bottom: 22px;
 }
 
+h1, h2, h3, h4, h5 {
+	font: 300 18px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: 700;
+	line-height: 52px;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size:26px;
+	line-height: 28px;
+}
+
+h3{
+	font-size:24px;
+}
+
+h4 {
+	font-size:18px;
+}
+
+h5{
+	font-size:18px;
+	font-weight: 700;
+}
+
+a{
+	color:#F05F40;
+	text-decoration: none;
+}
 /*
   ========================================
   Buttons
@@ -105,14 +156,18 @@ h1, h3, h4, h5, p {
 */
 
 .btn {
-  border-radius: 5px;
+  font: 700 14px/18px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 25px;
   display: inline-block;
+  padding: 15px 30px;
   margin: 0;
+  margin-top: 44px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .btn-alt {
   border: 1px solid #dfe2e5;
-  padding: 10px 30px;
 }
 
 /*
@@ -136,24 +191,58 @@ h1, h3, h4, h5, p {
 
 .nav-links{
 	display: inline-block;
-	margin: 0 12px;
-	text-transform: uppercase;
-	font-size: 12px;
+	margin: 0 16px;
 }
 
+.main-nav{
+  text-transform: uppercase;
+  font: 700 12px/26px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+}
 
+.main-nav a {
+	color: #888;
+}
+
+.main-nav a:hover {
+	color: #fff;
+}
 
 /*
 Custom styles
 */
 
 body{
-	font-family: Helvetica, Arial, sans-serif
+	color:#666;
+	font: 400 16px/22px 'Merriweather', "Time New Romans", serif;
+	text-align:center;
 }
 
 .hero {
-  padding: 22px 80px 66px 80px;
+  height:100vh;
+  padding: 0 80px 110px 80px;
+  padding-top: 10vh;
 }
 
+.hero p {
+	margin-bottom: 0;
+}
+.hero-btn{
+	color:#fff;
+	background-color:#F05F40;
+}
+
+.shortline {
+	border: none;
+	height: 3px;
+	color:#F05F40;
+	background-color:#F05F40;
+	width: 50px;
+	margin-top:25px;
+	margin-bottom: 25px;
+}
+
+#contact a:hover{
+	text-decoration-line: underline;
+}
 
 
