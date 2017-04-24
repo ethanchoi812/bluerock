@@ -1,0 +1,99 @@
+@import "vars";
+@import "base";
+@import "font-awesome/font-awesome";
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+
+.logo {
+  float: left;
+  text-transform: uppercase;
+}
+
+.nav-container{
+  padding: 12px 14px;
+}
+
+.nav-list{
+  float: right;
+}
+
+.nav-links{
+  display: inline-block;
+  margin: 0 16px;
+}
+
+.main-nav{
+  text-transform: uppercase;
+  font: 700 12px/26px $heading-font; 
+
+     a {
+      color: $off-white;
+
+     &:hover {
+      color: $white;
+    }
+  }
+}
+
+body{
+  color:$body-gray;
+  font: 400 16px/22px $base-font;
+  text-align:center;
+}
+
+.overlay{
+  background-color: #ccc;
+  background: url(../img/stars.jpg) $full fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hero {
+  height:100vh;
+  padding: 0 80px 110px 80px;
+  padding-top: 10vh;
+ 
+ p {
+  color:$off-white;
+  margin-bottom: 0;
+  }
+}
+
+.hero-btn{
+  color:$white;
+  background-color:$orange;
+}
+
+.shortline {
+  border: none;
+  height: 3px;
+  color:$orange;
+  background-color:$orange;
+  width: 50px;
+  margin-top:25px;
+  margin-bottom: 25px;
+}
+
+.shortline-alt{
+  color:$white;
+  background-color:$white;
+}
+
+.about{
+  background: $orange $full;
+  color: $off-white;
+
+  h2 {
+    color: $white;
+  }
+}
+
+#contact a:hover{
+  text-decoration-line: underline;
+}
