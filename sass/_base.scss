@@ -70,7 +70,7 @@ table {
 }
 
 .container {
-  padding: 45px 30px;
+  padding: 75px 45px;
 }
 
 .col-1-4,
@@ -124,7 +124,7 @@ h1, h2, h3, h4, h5 {
 h1 {
 	color: #fff;
 	font-size: 48px;
-	font-weight: 700;
+	font-weight: 300;
 	line-height: 52px;
 	text-transform: uppercase;
 }
@@ -148,7 +148,7 @@ h5{
 }
 
 a{
-	color:#F05F40;
+	color:$orange;
 	text-decoration: none;
 }
 
@@ -164,6 +164,7 @@ a{
 
 .btn {
   font: 700 14px/18px $heading-font;
+  color:$black;
   background:$white;
   border-radius: 25px;
   display: inline-block;
@@ -172,6 +173,10 @@ a{
   margin-top: 44px;
   text-transform: uppercase;
   text-decoration: none;
+
+  &:hover{
+    background:$off-white
+  }
 }
 
 .btn-alt {

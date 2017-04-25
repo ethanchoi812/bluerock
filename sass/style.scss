@@ -68,6 +68,10 @@ body{
 .hero-btn{
   color:$white;
   background-color:$orange;
+
+  &:hover {
+    background-color:$dark-orange;
+  }
 }
 
 .shortline {
@@ -94,6 +98,34 @@ body{
   }
 }
 
-#contact a:hover{
-  text-decoration-line: underline;
+.portfolio-b {
+  background-color:$black;
+  margin-top: -5px;
+
+  h2 {
+    color:$white;
+  }
+}
+
+.portfolio-img{
+  width:33.33%;
+  height: 50vh;
+  margin-top:-5px;
+  overflow: hidden;
+}
+
+.contact {
+  .row {
+    width:720px;
+    margin: 0 auto;
+    padding-bottom:35px;
+  
+  .fa {
+    color: $body-gray;
+  }
+}
+
+  a:hover{
+    text-decoration-line: underline;
+  }
 }
