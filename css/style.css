@@ -140,6 +140,7 @@ a {
   text-decoration: none; }
 
 i {
+  opacity: 0;
   color: #F05F40;
   margin-bottom: 12px; }
 
@@ -2518,6 +2519,7 @@ i {
 
 .white-nav {
   background-color: #fff;
+  border-bottom: none;
   transition: all 0.5s ease-in-out; }
   .white-nav a {
     color: #000; }
@@ -2595,5 +2597,32 @@ body {
     transition: display 0.2s ease-in; }
 .contact a:hover {
   text-decoration-line: underline; }
+
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1, 0.1);
+    transform: scale(0.1, 0.1); }
+  50% {
+    opacity: 1; } }
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0.1, 0.1);
+    transform: scale3d(0.1, 0.1); }
+  50% {
+    opacity: 1; } }
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn; }
+
+#get-started-btn, #download-btn {
+  opacity: 0; }
 
 /*# sourceMappingURL=style.css.map */

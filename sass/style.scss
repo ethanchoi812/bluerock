@@ -40,6 +40,7 @@
 
 .white-nav {
   background-color: $white;
+  border-bottom: none;
   transition: all 0.5s ease-in-out;
   a{
     color: $black;
@@ -140,4 +141,44 @@ body{
   a:hover{
     text-decoration-line: underline;
   }
+}
+
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(.1, .1);
+    transform: scale(.1, .1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(.1, .1);
+    transform: scale3d(.1, .1);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+#get-started-btn, #download-btn{
+  opacity: 0;
 }

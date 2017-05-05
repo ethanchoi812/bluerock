@@ -1,8 +1,23 @@
 
 
-	window.onscroll = function(){changeNavBg()};
+	window.onscroll = function(){
+		changeNavBg();
+		
+		//var abtDiv = document.getElementById("about");
+		//var svcDiv = document.getElementById("services");
+		var faicons = document.getElementsByClassName("fa");
+		var getStartedBtn = document.getElementById("get-started-btn");
+		var downloadBtn = document.getElementById("download-btn");
+		var x = 1000;
 
-	window.onload =function(){loadFa()};
+		for (var i=0; i<faicons.length; i++){		
+			setTimeout(lazyLoad(faicons[i]), x);
+			x += 1000;
+		}
+
+		lazyLoad(getStartedBtn);
+		lazyLoad(downloadBtn);
+	};
 	
 	function changeNavBg(){
 
@@ -15,15 +30,22 @@
 		}
 	};
 
-	function loadFa(){
+	function elementInViewport(el){
+		var rect = el.getBoundingClientRect();
+		var html = document.documentElement;
 
-		var faIcons = document.getElementsByClassName("fa");
-		for(var i=0; i<faIcons.length; i++){
-			if(faIcons[i].scrollIntoView){
-				if(faIcons[i].display === "none"){
-					faIcons[i].display = "block";
-					alert("YAS");
-				}
-			}
+		return (rect.top >= 0 && rect.left >= 0 
+			&& rect.bottom <= (window.innerHeight || html.clientHeight)
+			&& rect.right <= (window.innerWidth || html.clientWidth)
+	    )
+	}
+
+	function lazyLoad(el){
+		if(elementInViewport(el)){
+			el.style.opacity = 1;
+			el.classList.add("animated");
+			el.classList.add("zoomIn");
 		}
 	}
+		
+	
