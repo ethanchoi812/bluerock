@@ -1,31 +1,45 @@
 
 
 	window.onscroll = function(){
-		changeNavBg();
+		changeNavBgScroll();
 		
 		//var abtDiv = document.getElementById("about");
 		//var svcDiv = document.getElementById("services");
-		var faicons = document.getElementsByClassName("fa");
+		var faicons = document.getElementsByClassName("fai");
 		var getStartedBtn = document.getElementById("get-started-btn");
 		var downloadBtn = document.getElementById("download-btn");
-		var x = 1000;
 
-		for (var i=0; i<faicons.length; i++){		
-			setTimeout(lazyLoad(faicons[i]), x);
-			x += 1000;
+
+		for (var i=0; i<faicons.length; i++){			
+			lazyLoad(faicons[i]);
 		}
 
 		lazyLoad(getStartedBtn);
 		lazyLoad(downloadBtn);
 	};
 	
-	function changeNavBg(){
+	window.onresize = function(){
+		changeNavBgResize();
+	}
+
+	function changeNavBgScroll(){
 
 		var mainNav = document.getElementById("main-nav");
 
 		if (document.body.scrollTop > 70){ 
 			mainNav.classList.add("white-nav");
 		} else if (document.body.scrollTop < 70) {
+			mainNav.classList.remove("white-nav");
+		}
+	};
+
+	function changeNavBgResize(){
+
+		var mainNav = document.getElementById("main-nav");
+
+		if (document.body.scrollTop > 70 || window.innerWidth < 765){ 
+			mainNav.classList.add("white-nav");
+		} else if (document.body.scrollTop < 70 || window.innerWidth > 765) {
 			mainNav.classList.remove("white-nav");
 		}
 	};

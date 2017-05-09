@@ -2508,10 +2508,11 @@ i {
 
 .main-nav {
   position: fixed;
-  padding: 25px 14px 0;
+  padding: 20px 14px 0;
   border-bottom: 1px solid #888;
   text-transform: uppercase;
-  font: 700 14px/26px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  font: 700 14px/26px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  z-index: 10; }
   .main-nav a {
     color: #efefef; }
     .main-nav a:hover {
@@ -2529,6 +2530,9 @@ i {
       color: #F05F40; }
     .white-nav a h5 {
       font-size: 16px; }
+
+.toggle-nav {
+  display: none; }
 
 body {
   color: #666;
@@ -2576,17 +2580,47 @@ body {
   .about h2 {
     color: #fff; }
 
+.portfolio-a {
+  width: 100%; }
+
 .portfolio-b {
   background-color: #000;
   margin-top: -5px; }
   .portfolio-b h2 {
     color: #fff; }
 
-.portfolio-img {
+.img-box {
+  position: relative;
+  display: inline-block;
+  float: left;
   width: 33.33%;
-  height: 50vh;
-  margin-top: -5px;
+  height: 45vh;
   overflow: hidden; }
+
+.portfolio-img {
+  opacity: 1;
+  width: 100%;
+  overflow: hidden;
+  transition: .5s ease; }
+  .portfolio-img:hover {
+    opacity: 0.3; }
+
+.img-text {
+  transition: .5s ease;
+  background-color: #F05F40;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding-top: 20%; }
+  .img-text:hover {
+    opacity: 1; }
 
 .contact .row {
   width: 720px;
@@ -2624,5 +2658,27 @@ body {
 
 #get-started-btn, #download-btn {
   opacity: 0; }
+
+/* ============
+Media queries
+===============*/
+@media all and (max-width: 765px) {
+  .nav-list {
+    display: none; }
+
+  .toggle-btn {
+    text-transform: uppercase;
+    display: inline-block;
+    color: #000;
+    float: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-top: -5px; }
+    .toggle-btn i {
+      opacity: 1;
+      color: #000;
+      margin-bottom: 0;
+      margin-left: 2px; } }
 
 /*# sourceMappingURL=style.css.map */

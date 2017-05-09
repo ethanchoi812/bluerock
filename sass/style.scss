@@ -24,10 +24,11 @@
 
 .main-nav{
   position: fixed;
-  padding: 25px 14px 0;
+  padding: 20px 14px 0;
   border-bottom: 1px solid $link-gray;
   text-transform: uppercase;
   font: 700 14px/26px $heading-font; 
+  z-index:10;
 
      a {
       color: $off-white;
@@ -49,6 +50,10 @@
     &.logo {color: $orange;}
     h5{font-size: 16px;}
   }
+}
+
+.toggle-nav{
+  display: none;
 }
 
 body{
@@ -110,6 +115,10 @@ body{
   }
 }
 
+.portfolio-a{
+  width:100%;
+}
+
 .portfolio-b {
   background-color:$black;
   margin-top: -5px;
@@ -119,11 +128,44 @@ body{
   }
 }
 
-.portfolio-img{
+.img-box{
+  position:relative;
+  display: inline-block;
+  float:left;
   width:33.33%;
-  height: 50vh;
-  margin-top:-5px;
+  height: 45vh;
   overflow: hidden;
+}
+
+.portfolio-img{
+  opacity: 1;
+  width: 100%;
+  overflow: hidden;
+  transition: .5s ease;
+
+  &:hover{
+    opacity: 0.3;
+  }
+}
+
+.img-text{
+  transition: .5s ease;
+  background-color:$orange;
+  color: $white;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  padding-top:20%;
+
+  &:hover{
+    opacity: 1;
+  }
 }
 
 .contact {
@@ -182,3 +224,36 @@ body{
 #get-started-btn, #download-btn{
   opacity: 0;
 }
+
+
+/* ============
+Media queries
+===============*/
+
+@media all and (max-width: 765px) {
+  
+  .nav-list {
+   display: none;
+  }
+
+  .toggle-btn {
+    text-transform: uppercase;
+    display:inline-block;
+    color: $black;
+    float:right;
+    border: 1px solid $dark-gray;
+    border-radius:5px;
+    padding:2px 5px;
+    margin-top: -5px;
+
+    i {
+      opacity: 1;
+      color: $black;
+      margin-bottom: 0;
+      margin-left: 2px;
+    }
+  }
+}
+
+  
+  
