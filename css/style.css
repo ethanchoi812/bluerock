@@ -73,18 +73,15 @@ table {
 .container {
   padding: 75px 45px; }
 
-.col-1-4,
-.col-1-2 {
+.col {
   display: inline-block;
   vertical-align: top;
   padding-left: 15px;
   padding-right: 15px; }
 
-.col-1-4 {
-  width: 25%; }
-
-.col-1-2 {
-  width: 50%; }
+.row {
+  max-width: 100%;
+  margin: 0 auto; }
 
 /*
   ========================================
@@ -2509,7 +2506,7 @@ i {
 .main-nav {
   position: fixed;
   padding: 20px 14px 0;
-  border-bottom: 1px solid #888;
+  border-bottom: 1px solid #666;
   text-transform: uppercase;
   font: 700 14px/26px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   z-index: 10; }
@@ -2520,8 +2517,8 @@ i {
 
 .white-nav {
   background-color: #fff;
-  border-bottom: none;
-  transition: all 0.5s ease-in-out; }
+  transition: all 0.5s ease-in-out;
+  border-bottom: none; }
   .white-nav a {
     color: #000; }
     .white-nav a:hover {
@@ -2532,8 +2529,15 @@ i {
       font-size: 16px; }
 
 .toggle-nav {
-  display: none; }
+  display: none;
+  float: right;
+  pointer: cursor; }
 
+/*
+  ========================================
+  Body
+  ========================================
+*/
 body {
   color: #666;
   font: 400 16px/22px "Merriweather", "Time New Romans", serif;
@@ -2580,6 +2584,17 @@ body {
   .about h2 {
     color: #fff; }
 
+.svc-info {
+  width: 25%; }
+  @media all and (min-width: 992px) and (max-width: 1199px) {
+    .svc-info {
+      width: 50%;
+      padding-top: 25px; } }
+  @media all and (max-width: 991px) {
+    .svc-info {
+      width: 100%;
+      padding-top: 35px; } }
+
 .portfolio-a {
   width: 100%; }
 
@@ -2592,14 +2607,22 @@ body {
 .img-box {
   position: relative;
   display: inline-block;
-  float: left;
+  margin: 0 auto;
+  margin-top: -5px;
   width: 33.33%;
-  height: 45vh;
   overflow: hidden; }
+  @media all and (min-width: 768px) and (max-width: 1199px) {
+    .img-box {
+      width: 50%; } }
+  @media all and (max-width: 767px) {
+    .img-box {
+      width: 65%; } }
 
 .portfolio-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
   opacity: 1;
-  width: 100%;
   overflow: hidden;
   transition: .5s ease; }
   .portfolio-img:hover {
@@ -2631,6 +2654,16 @@ body {
     transition: display 0.2s ease-in; }
 .contact a:hover {
   text-decoration-line: underline; }
+
+.contact-info {
+  width: 50%; }
+  @media all and (max-width: 767px) {
+    .contact-info {
+      width: 100%;
+      padding-bottom: 15px; } }
+
+.active a {
+  color: #F05F40; }
 
 .animated {
   -webkit-animation-duration: 1.5s;
@@ -2664,7 +2697,36 @@ Media queries
 ===============*/
 @media all and (max-width: 765px) {
   .nav-list {
-    display: none; }
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    float: none;
+    clear: left;
+    transition: all 0.5s ease; }
+    .nav-list li {
+      display: block;
+      text-align: left;
+      padding-bottom: 20px; }
+      .nav-list li:first-child {
+        padding-top: 20px; }
+
+  .main-nav {
+    position: fixed;
+    padding: 20px 14px 0;
+    border-bottom: none;
+    text-transform: uppercase;
+    font: 700 14px/26px "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 10;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out; }
+    .main-nav a {
+      color: #000; }
+      .main-nav a:hover {
+        color: #F05F40; }
+      .main-nav a.logo {
+        color: #F05F40; }
+      .main-nav a h5 {
+        font-size: 16px; }
 
   .toggle-btn {
     text-transform: uppercase;
@@ -2675,10 +2737,19 @@ Media queries
     border-radius: 5px;
     padding: 2px 5px;
     margin-top: -5px; }
+    .toggle-btn:hover {
+      background-color: #efefef;
+      pointer: cursor; }
     .toggle-btn i {
       opacity: 1;
       color: #000;
       margin-bottom: 0;
-      margin-left: 2px; } }
+      margin-left: 2px; }
+
+  .toggle-nav:checked ~ .nav-list {
+    border-top: 1px solid #efefef;
+    display: block;
+    max-height: 500px;
+    overflow: hidden; } }
 
 /*# sourceMappingURL=style.css.map */
