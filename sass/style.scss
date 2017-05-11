@@ -58,6 +58,10 @@
   pointer:cursor;
 }
 
+.active a{
+  color: $orange;
+}
+
 /*
   ========================================
   Body
@@ -229,10 +233,6 @@ body{
 
 }
 
-.active a {
-  color: $orange;
-}
-
 .animated {
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
@@ -273,7 +273,12 @@ body{
   opacity: 0;
 }
 
-
+@for $fai from 1 through 4{
+  .fai-#{$fai}{
+  -webkit-animation-delay: ($fai/10) + s;
+  animation-delay: ($fai/10) + s;
+ }
+}
 /* ============
 Media queries
 ===============*/

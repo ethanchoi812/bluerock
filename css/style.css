@@ -2533,6 +2533,9 @@ i {
   float: right;
   pointer: cursor; }
 
+.active a {
+  color: #F05F40; }
+
 /*
   ========================================
   Body
@@ -2662,9 +2665,6 @@ body {
       width: 100%;
       padding-bottom: 15px; } }
 
-.active a {
-  color: #F05F40; }
-
 .animated {
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
@@ -2691,6 +2691,22 @@ body {
 
 #get-started-btn, #download-btn {
   opacity: 0; }
+
+.fai-1 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+
+.fai-2 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+.fai-3 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+
+.fai-4 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
 
 /* ============
 Media queries

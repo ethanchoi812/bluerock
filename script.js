@@ -47,7 +47,19 @@
 
 	function activeNav(){
 
-		//todo
+		divId = ["about", "services", "portfolio", "contact"];		
+		
+		for(var n=0; n<divId.length; n++){
+
+			var rect = document.getElementById(divId[n]).getBoundingClientRect();
+			
+			if (rect.top <= window.innerHeight / 2 && rect.top >=0){
+				document.getElementById(divId[n] + "-nav").classList.add("active");
+			} else {
+				document.getElementById(divId[n] + "-nav").classList.remove("active");
+			}
+
+		}
 		
 	}
 	
