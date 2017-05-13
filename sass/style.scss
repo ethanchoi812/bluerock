@@ -275,8 +275,8 @@ body{
 
 @for $fai from 1 through 4{
   .fai-#{$fai}{
-  -webkit-animation-delay: ($fai/10) + s;
-  animation-delay: ($fai/10) + s;
+  -webkit-animation-delay: ($fai/8) + s;
+  animation-delay: ($fai/8) + s;
  }
 }
 /* ============
