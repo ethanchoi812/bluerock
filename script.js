@@ -47,20 +47,35 @@
 
 	function activeNav(){
 
+		var sumHeight = window.innerHeight - document.getElementById("main-nav").offsetHeight;;
+
 		divId = ["about", "services", "portfolio", "contact"];		
 		
 		for(var n=0; n<divId.length; n++){
 
-			var rect = document.getElementById(divId[n]).getBoundingClientRect();
-			
-			if (rect.top <= window.innerHeight / 2 && rect.top >=0){
-				document.getElementById(divId[n] + "-nav").classList.add("active");
+			var divHeight = document.getElementById(divId[n]).offsetHeight;
+			var body = document.body; 
+			var html = document.documentElement;
+			var navLink = document.getElementById(divId[n] + "-nav");
+
+			if (body.scrollTop > sumHeight || html.scrollTop > sumHeight){
+
+				navLink.classList.add("active");
+				
 			} else {
-				document.getElementById(divId[n] + "-nav").classList.remove("active");
+
+				navLink.classList.remove("active");
+
 			}
 
+			if (body.scrollTop > (sumHeight + divHeight) || html.scrollTop > (sumHeight + divHeight)) {
+				
+				navLink.classList.remove("active");
+	
+			} 
+
+			sumHeight += divHeight;
 		}
-		
 	}
 	
 		
